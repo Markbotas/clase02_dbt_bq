@@ -19,3 +19,13 @@ models:
             tests:
                 - unique
                 - not_null
+
+    - name: stg_order_filter
+      description: "ordenes de cliente"
+      columns:
+        - name: STATUS
+          description: "estado de las ordenes"
+          tests:
+            - not_null
+            - accepted_values:
+                values: ['placed','shipped','completed']
